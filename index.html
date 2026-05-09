@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
-  /* ===================== CSS VARIABLES ===================== */
   :root {
     --bg: #0b0d18;
     --bg2: #12152a;
@@ -25,8 +24,6 @@
     --shadow: 0 4px 24px rgba(0,0,0,0.45);
     --transition: 0.22s cubic-bezier(0.4,0,0.2,1);
   }
-
-  /* ===================== RESET & BASE ===================== */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { font-size: var(--font-size); scroll-behavior: smooth; }
   body {
@@ -40,20 +37,14 @@
   }
   input, textarea, select, button { font-family: inherit; font-size: inherit; }
   button { cursor: pointer; border: none; background: none; }
-
-  /* ===================== SCROLLBAR ===================== */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 99px; }
-
-  /* ===================== APP LAYOUT ===================== */
   .app-wrap {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 16px 80px;
   }
-
-  /* ===================== HEADER ===================== */
   .header {
     position: sticky;
     top: 0;
@@ -142,8 +133,6 @@
   }
   .hbtn-secondary:hover { background: var(--bg3); }
   .hbtn i { font-size: 0.8rem; }
-
-  /* ===================== STATS BAR ===================== */
   .stats-bar {
     display: flex;
     gap: 8px;
@@ -170,8 +159,6 @@
     width: 7px; height: 7px;
     border-radius: 50%;
   }
-
-  /* ===================== TOOLBAR ===================== */
   .toolbar {
     display: flex;
     align-items: center;
@@ -213,8 +200,6 @@
     accent-color: var(--accent2);
     cursor: pointer;
   }
-
-  /* ===================== GRID ===================== */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -224,8 +209,6 @@
   @media (max-width: 480px) {
     .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   }
-
-  /* ===================== CARD ===================== */
   .card {
     border-radius: var(--card-radius);
     padding: 16px;
@@ -248,8 +231,6 @@
     box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,0.08);
   }
   .card:active { transform: translateY(-2px) scale(0.99); }
-
-  /* Card themes */
   .card[data-theme="default"] { background: var(--surface); border: 1px solid var(--border); }
   .card[data-theme="sakura"]  { background: linear-gradient(135deg,#2d1a26,#3d2033); border: 1px solid rgba(232,121,160,0.2); }
   .card[data-theme="ocean"]   { background: linear-gradient(135deg,#0e1f3a,#133052); border: 1px solid rgba(79,179,255,0.2); }
@@ -257,7 +238,6 @@
   .card[data-theme="sunset"]  { background: linear-gradient(135deg,#2d1900,#3d2800); border: 1px solid rgba(255,160,79,0.2); }
   .card[data-theme="void"]    { background: linear-gradient(135deg,#0d0d1a,#16132a); border: 1px solid rgba(180,100,255,0.2); }
   .card[data-theme="steel"]   { background: linear-gradient(135deg,#161c28,#1c2436); border: 1px solid rgba(100,180,255,0.15); }
-
   .card-badge {
     position: absolute;
     top: 10px; right: 10px;
@@ -273,7 +253,6 @@
   .badge-paused    { background: rgba(255,200,79,0.2);  color: #ffc84f; }
   .badge-dropped   { background: rgba(255,100,100,0.2); color: #ff7070; }
   .badge-planned   { background: rgba(160,160,180,0.2); color: #a0a0b8; }
-
   .card-title {
     font-family: 'Noto Serif JP', serif;
     font-size: 0.92rem;
@@ -350,8 +329,6 @@
   }
   .card:hover .card-del { opacity: 1; }
   .card-del:hover { background: rgba(255,80,80,0.28); color: #ff7070; }
-
-  /* ===================== EMPTY STATE ===================== */
   .empty-state {
     grid-column: 1 / -1;
     display: flex;
@@ -374,8 +351,6 @@
   }
   .empty-state h3 { color: var(--text); font-size: 1.1rem; font-weight: 600; }
   .empty-state p { font-size: 0.85rem; max-width: 260px; }
-
-  /* ===================== MODAL BASE ===================== */
   .modal-overlay {
     position: fixed;
     inset: 0;
@@ -424,8 +399,6 @@
   }
   .modal-close:hover { background: rgba(255,80,80,0.18); color: #ff7070; }
   .modal-body { padding: 0 20px 20px; }
-
-  /* ===================== FORM STYLES ===================== */
   .form-group {
     display: flex;
     flex-direction: column;
@@ -459,16 +432,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
-  .form-row-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-  }
   textarea.form-input { resize: vertical; min-height: 70px; }
   select.form-input { cursor: pointer; }
   select.form-input option { background: var(--bg2); }
-
-  /* Star rating picker */
   .star-picker { display: flex; gap: 6px; padding: 4px 0; }
   .star-pick {
     font-size: 1.3rem;
@@ -477,8 +443,6 @@
     transition: color 0.1s, transform 0.1s;
   }
   .star-pick:hover, .star-pick.active { color: #ffc84f; transform: scale(1.15); }
-
-  /* Theme picker */
   .theme-picker { display: flex; gap: 8px; flex-wrap: wrap; padding: 4px 0; }
   .theme-swatch {
     width: 34px; height: 34px;
@@ -500,8 +464,6 @@
   .sw-sunset  { background: linear-gradient(135deg,#2d1900,#3d2800); }
   .sw-void    { background: linear-gradient(135deg,#0d0d1a,#16132a); }
   .sw-steel   { background: linear-gradient(135deg,#161c28,#1c2436); }
-
-  /* Modal buttons */
   .modal-actions {
     display: flex;
     gap: 8px;
@@ -524,8 +486,6 @@
   .btn-danger:hover { background: rgba(255,80,80,0.28); }
   .btn-success { background: rgba(79,209,148,0.15); color: #4fd194; border: 1px solid rgba(79,209,148,0.2); }
   .btn-success:hover { background: rgba(79,209,148,0.28); }
-
-  /* ===================== IMPORT/EXPORT MODAL ===================== */
   .import-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
   .itab {
     padding: 6px 14px;
@@ -571,8 +531,6 @@
     margin-bottom: 10px;
     line-height: 1.4;
   }
-
-  /* ===================== TOAST ===================== */
   #toast {
     position: fixed;
     bottom: 24px;
@@ -595,8 +553,6 @@
   }
   #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
   #toast i { font-size: 0.85rem; }
-
-  /* ===================== FAB (Add Button Mobile) ===================== */
   .fab {
     display: none;
     position: fixed;
@@ -614,15 +570,6 @@
   }
   .fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(232,121,160,0.6); }
   @media (max-width: 600px) { .fab { display: flex; } }
-
-  /* Divider */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 14px 0;
-  }
-
-  /* Sort select */
   .sort-select {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -633,9 +580,6 @@
     cursor: pointer;
     outline: none;
   }
-  .sort-select option { background: var(--bg2); }
-
-  /* ===================== RESPONSIVE ===================== */
   @media (max-width: 480px) {
     .logo { font-size: 1.15rem; }
     .hbtn span { display: none; }
@@ -646,8 +590,6 @@
 </style>
 </head>
 <body>
-
-<!-- ===== HEADER ===== -->
 <header class="header">
   <div class="header-inner">
     <div class="logo">Ani<span>Stack</span></div>
@@ -665,13 +607,8 @@
     </div>
   </div>
 </header>
-
-<!-- ===== MAIN APP ===== -->
 <div class="app-wrap">
-  <!-- Stats Bar -->
   <div class="stats-bar" id="statsBar"></div>
-
-  <!-- Toolbar -->
   <div class="toolbar">
     <div class="filter-pills" id="filterPills">
       <button class="pill active" data-filter="all">All</button>
@@ -693,18 +630,10 @@
       <span>Aa</span>
     </div>
   </div>
-
-  <!-- Card Grid -->
   <div class="grid" id="cardGrid"></div>
 </div>
-
-<!-- ===== FAB ===== -->
 <button class="fab" onclick="openAddModal()"><i class="fa-solid fa-plus"></i></button>
-
-<!-- ===== TOAST ===== -->
 <div id="toast"></div>
-
-<!-- ===== ADD / EDIT MODAL ===== -->
 <div class="modal-overlay" id="editModalOverlay" style="display:none" onclick="handleOverlayClick(event,'editModalOverlay')">
   <div class="modal" id="editModal" onclick="event.stopPropagation()">
     <div class="modal-header">
@@ -714,7 +643,7 @@
     <div class="modal-body">
       <div class="form-group">
         <label class="form-label">Anime Title *</label>
-        <input type="text" class="form-input" id="f_title" placeholder="e.g. Fullmetal Alchemist: Brotherhood" />
+        <input type="text" class="form-input" id="f_title" />
       </div>
       <div class="form-row">
         <div class="form-group">
@@ -728,46 +657,42 @@
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Genre (optional)</label>
-          <input type="text" class="form-input" id="f_genre" placeholder="Action, Isekai…" />
+          <label class="form-label">Genre</label>
+          <input type="text" class="form-input" id="f_genre" />
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Episodes Watched</label>
-          <input type="number" class="form-input" id="f_epCurrent" placeholder="0" min="0" />
+          <input type="number" class="form-input" id="f_epCurrent" />
         </div>
         <div class="form-group">
           <label class="form-label">Total Episodes</label>
-          <input type="number" class="form-input" id="f_epTotal" placeholder="12" min="0" />
+          <input type="number" class="form-input" id="f_epTotal" />
         </div>
       </div>
       <div class="form-group">
-        <label class="form-label">Rating (0–10)</label>
+        <label class="form-label">Rating</label>
         <div class="star-picker" id="starPicker"></div>
         <input type="hidden" id="f_rating" value="0" />
       </div>
       <div class="form-group">
-        <label class="form-label">Card Theme</label>
+        <label class="form-label">Theme</label>
         <div class="theme-picker" id="themePicker"></div>
         <input type="hidden" id="f_theme" value="default" />
       </div>
       <div class="form-group">
         <label class="form-label">Notes</label>
-        <textarea class="form-input" id="f_notes" placeholder="Quick thoughts…"></textarea>
+        <textarea class="form-input" id="f_notes"></textarea>
       </div>
       <div class="modal-actions">
-        <button class="btn btn-danger" id="deleteBtn" style="display:none;margin-right:auto" onclick="deleteEntry()">
-          <i class="fa-solid fa-trash"></i> Delete
-        </button>
+        <button class="btn btn-danger" id="deleteBtn" style="display:none;margin-right:auto" onclick="deleteEntry()">Delete</button>
         <button class="btn btn-ghost" onclick="closeModal('editModalOverlay')">Cancel</button>
         <button class="btn btn-primary" onclick="saveEntry()">Save</button>
       </div>
     </div>
   </div>
 </div>
-
-<!-- ===== IMPORT / EXPORT MODAL ===== -->
 <div class="modal-overlay" id="ieModalOverlay" style="display:none" onclick="handleOverlayClick(event,'ieModalOverlay')">
   <div class="modal" onclick="event.stopPropagation()">
     <div class="modal-header">
@@ -776,502 +701,186 @@
     </div>
     <div class="modal-body">
       <div class="import-tabs">
-        <button class="itab active" onclick="switchIETab('paste',this)">📋 Paste List</button>
-        <button class="itab" onclick="switchIETab('json',this)">📦 JSON Import</button>
-        <button class="itab" onclick="switchIETab('export',this)">⬆️ Export</button>
+        <button class="itab active" onclick="switchIETab('paste',this)">Paste</button>
+        <button class="itab" onclick="switchIETab('json',this)">JSON</button>
+        <button class="itab" onclick="switchIETab('export',this)">Export</button>
       </div>
-
-      <!-- Paste Panel -->
       <div class="import-panel active" id="panel_paste">
-        <div class="import-hint">
-          Paste a plain list — one title per line. Optionally add a rating and episodes:<br/>
-          <code>Naruto | 8 | 220/500</code> or just <code>Naruto</code>
-        </div>
-        <textarea class="form-input" id="ie_paste" rows="8" placeholder="Naruto | 8 | 220/500&#10;Attack on Titan | 10 | 87/87&#10;Demon Slayer"></textarea>
+        <textarea class="form-input" id="ie_paste" rows="8"></textarea>
         <div class="modal-actions">
-          <button class="btn btn-ghost" onclick="closeModal('ieModalOverlay')">Cancel</button>
-          <button class="btn btn-primary" onclick="importPaste()"><i class="fa-solid fa-file-import"></i> Import List</button>
+          <button class="btn btn-primary" onclick="importPaste()">Import</button>
         </div>
       </div>
-
-      <!-- JSON Import Panel -->
       <div class="import-panel" id="panel_json">
-        <div class="import-hint">
-          Paste a JSON array (exported from this app or compatible format).<br/>
-          <code>[{"title":"Naruto","rating":8,"epCurrent":220,"epTotal":500}]</code>
-        </div>
-        <textarea class="form-input" id="ie_json" rows="8" placeholder='[{"title": "...", "rating": 8, "status": "watching"}]'></textarea>
+        <textarea class="form-input" id="ie_json" rows="8"></textarea>
         <div class="modal-actions">
-          <button class="btn btn-ghost" onclick="closeModal('ieModalOverlay')">Cancel</button>
-          <button class="btn btn-primary" onclick="importJSON()"><i class="fa-solid fa-file-import"></i> Import JSON</button>
+          <button class="btn btn-primary" onclick="importJSON()">Import JSON</button>
         </div>
       </div>
-
-      <!-- Export Panel -->
       <div class="import-panel" id="panel_export">
-        <div class="import-hint">Your full list as JSON — copy and keep it safe, or paste it back to import.</div>
         <div class="export-box" id="exportBox"></div>
         <div class="modal-actions">
-          <button class="btn btn-success" onclick="copyExport()"><i class="fa-solid fa-copy"></i> Copy to Clipboard</button>
+          <button class="btn btn-success" onclick="copyExport()">Copy</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <script>
-/* ========================================================
-   DATA LAYER
-======================================================== */
 let db = { entries: [] };
 let editingId = null;
 let currentFilter = 'all';
 let currentSearch = '';
-
-function generateId() {
-  return Date.now().toString(36) + Math.random().toString(36).slice(2);
-}
-
-function saveData() {
-  try {
-    localStorage.setItem('anistack_v2', JSON.stringify(db));
-  } catch (e) {
-    showToast('⚠️ Could not save — storage full?', true);
-  }
-}
-
+function generateId() { return Date.now().toString(36) + Math.random().toString(36).slice(2); }
+function saveData() { localStorage.setItem('anistack_v2', JSON.stringify(db)); }
 function loadData() {
-  try {
-    const raw = localStorage.getItem('anistack_v2');
-    if (raw) {
-      const parsed = JSON.parse(raw);
-      if (parsed && Array.isArray(parsed.entries)) {
-        db = parsed;
-      }
-    }
-  } catch (e) {
-    db = { entries: [] };
-  }
+  const raw = localStorage.getItem('anistack_v2');
+  if (raw) db = JSON.parse(raw);
 }
-
-/* ========================================================
-   RENDER
-======================================================== */
 const THEMES = ['default','sakura','ocean','forest','sunset','void','steel'];
-const STATUSES = ['watching','completed','paused','dropped','planned'];
-const STATUS_COLORS = {
-  watching: 'badge-watching',
-  completed: 'badge-completed',
-  paused: 'badge-paused',
-  dropped: 'badge-dropped',
-  planned: 'badge-planned'
-};
-
+const STATUS_COLORS = { watching: 'badge-watching', completed: 'badge-completed', paused: 'badge-paused', dropped: 'badge-dropped', planned: 'badge-planned' };
 function getFilteredSorted() {
   let list = [...db.entries];
-  // Filter by status
-  if (currentFilter !== 'all') {
-    list = list.filter(e => e.status === currentFilter);
-  }
-  // Filter by search
+  if (currentFilter !== 'all') list = list.filter(e => e.status === currentFilter);
   if (currentSearch.trim()) {
     const q = currentSearch.toLowerCase();
-    list = list.filter(e =>
-      (e.title || '').toLowerCase().includes(q) ||
-      (e.genre || '').toLowerCase().includes(q) ||
-      (e.notes || '').toLowerCase().includes(q)
-    );
+    list = list.filter(e => (e.title||'').toLowerCase().includes(q) || (e.genre||'').toLowerCase().includes(q));
   }
-  // Sort
   const sort = document.getElementById('sortSelect').value;
-  switch (sort) {
-    case 'title':
-      list.sort((a,b) => (a.title||'').localeCompare(b.title||''));
-      break;
-    case 'rating':
-      list.sort((a,b) => (b.rating||0) - (a.rating||0));
-      break;
-    case 'progress':
-      list.sort((a,b) => {
-        const ap = a.epTotal ? (a.epCurrent||0)/a.epTotal : 0;
-        const bp = b.epTotal ? (b.epCurrent||0)/b.epTotal : 0;
-        return bp - ap;
-      });
-      break;
-    default: // recent
-      list.sort((a,b) => (b.createdAt||0) - (a.createdAt||0));
-  }
+  if (sort === 'title') list.sort((a,b) => (a.title||'').localeCompare(b.title||''));
+  else if (sort === 'rating') list.sort((a,b) => (b.rating||0) - (a.rating||0));
+  else list.sort((a,b) => (b.createdAt||0) - (a.createdAt||0));
   return list;
 }
-
 function renderCards() {
   const grid = document.getElementById('cardGrid');
   const list = getFilteredSorted();
   grid.innerHTML = '';
-
-  if (list.length === 0) {
-    grid.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-icon">🌸</div>
-        <h3>${currentSearch ? 'No results found' : 'Your list is empty'}</h3>
-        <p>${currentSearch ? 'Try a different search term.' : 'Add your first anime using the button above!'}</p>
-      </div>`;
-    renderStats();
-    return;
-  }
-
-  list.forEach((entry, idx) => {
+  list.forEach(entry => {
     const card = document.createElement('div');
     card.className = 'card';
     card.setAttribute('data-theme', entry.theme || 'default');
-    card.style.animationDelay = `${Math.min(idx * 0.05, 0.3)}s`;
     card.onclick = () => openEditModal(entry.id);
-
-    // Progress bar
     const pct = entry.epTotal ? Math.min(100, Math.round((entry.epCurrent||0) / entry.epTotal * 100)) : 0;
-    const epText = entry.epTotal
-      ? `${entry.epCurrent||0} / ${entry.epTotal} ep`
-      : entry.epCurrent ? `${entry.epCurrent} ep watched` : 'No episodes set';
-
-    // Stars
-    const starsHtml = Array.from({length:10},(_,i) =>
-      `<span class="star${i < (entry.rating||0) ? ' lit' : ''}">★</span>`
-    ).join('');
-
     card.innerHTML = `
-      <span class="card-badge ${STATUS_COLORS[entry.status] || 'badge-planned'}">${entry.status || 'planned'}</span>
-      <div class="card-title">${escHtml(entry.title || 'Untitled')}</div>
-      ${entry.genre ? `<div class="card-notes" style="color:var(--accent3);font-size:0.7rem;font-weight:500">${escHtml(entry.genre)}</div>` : ''}
+      <span class="card-badge ${STATUS_COLORS[entry.status]}">${entry.status}</span>
+      <div class="card-title">${entry.title}</div>
       <div class="card-meta">
-        ${entry.epTotal || entry.epCurrent ? `
-        <div class="card-ep"><i class="fa-solid fa-film"></i>${epText}</div>
-        <div class="ep-bar-wrap"><div class="ep-bar" style="width:${pct}%"></div></div>` : ''}
-        ${entry.rating ? `
-        <div class="card-rating">
-          <div class="stars">${starsHtml}</div>
-          <span class="rating-num">${entry.rating}/10</span>
-        </div>` : ''}
-        ${entry.notes ? `<div class="card-notes">${escHtml(entry.notes)}</div>` : ''}
-      </div>
-      <button class="card-del" onclick="event.stopPropagation();quickDelete('${entry.id}')">
-        <i class="fa-solid fa-trash"></i>
-      </button>`;
+        <div class="ep-bar-wrap"><div class="ep-bar" style="width:${pct}%"></div></div>
+        <div class="rating-num">${entry.rating}/10</div>
+      </div>`;
     grid.appendChild(card);
   });
   renderStats();
 }
-
 function renderStats() {
   const bar = document.getElementById('statsBar');
-  const entries = db.entries;
-  const total = entries.length;
-  const watching = entries.filter(e=>e.status==='watching').length;
-  const completed = entries.filter(e=>e.status==='completed').length;
-  const totalEp = entries.reduce((s,e)=>s+(e.epCurrent||0),0);
-  const avgRating = entries.filter(e=>e.rating).length
-    ? (entries.filter(e=>e.rating).reduce((s,e)=>s+(e.rating||0),0) / entries.filter(e=>e.rating).length).toFixed(1)
-    : '—';
-
-  bar.innerHTML = `
-    <div class="stat-chip"><span class="stat-dot" style="background:#7c8eff"></span>Total <span class="num">${total}</span></div>
-    <div class="stat-chip"><span class="stat-dot" style="background:#4fd194"></span>Watching <span class="num">${watching}</span></div>
-    <div class="stat-chip"><span class="stat-dot" style="background:#e879a0"></span>Completed <span class="num">${completed}</span></div>
-    <div class="stat-chip"><i class="fa-solid fa-film" style="color:#4fd1c5;font-size:0.65rem"></i>Ep Watched <span class="num">${totalEp}</span></div>
-    <div class="stat-chip"><i class="fa-solid fa-star" style="color:#ffc84f;font-size:0.65rem"></i>Avg Rating <span class="num">${avgRating}</span></div>`;
+  bar.innerHTML = `<div class="stat-chip">Total <span class="num">${db.entries.length}</span></div>`;
 }
-
-/* ========================================================
-   MODALS
-======================================================== */
-function openAddModal() {
-  editingId = null;
-  document.getElementById('editModalTitle').textContent = 'Add Anime';
-  document.getElementById('deleteBtn').style.display = 'none';
-  clearForm();
-  openModal('editModalOverlay');
-}
-
+function openAddModal() { editingId = null; clearForm(); openModal('editModalOverlay'); }
 function openEditModal(id) {
   const entry = db.entries.find(e=>e.id===id);
-  if (!entry) return;
   editingId = id;
-  document.getElementById('editModalTitle').textContent = 'Edit Anime';
-  document.getElementById('deleteBtn').style.display = 'flex';
   fillForm(entry);
+  document.getElementById('deleteBtn').style.display = 'block';
   openModal('editModalOverlay');
 }
-
-function openModal(id) {
-  document.getElementById(id).style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal(id) {
-  document.getElementById(id).style.display = 'none';
-  document.body.style.overflow = '';
-}
-
-function handleOverlayClick(e, id) {
-  if (e.target.id === id) closeModal(id);
-}
-
-/* ========================================================
-   FORM
-======================================================== */
+function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+function handleOverlayClick(e, id) { if (e.target.id === id) closeModal(id); }
 function buildStarPicker() {
   const container = document.getElementById('starPicker');
-  container.innerHTML = '';
   for (let i=1; i<=10; i++) {
     const btn = document.createElement('span');
     btn.className = 'star-pick';
     btn.textContent = '★';
-    btn.dataset.val = i;
     btn.onclick = () => setRating(i);
     container.appendChild(btn);
   }
 }
-
 function setRating(val) {
   document.getElementById('f_rating').value = val;
-  document.querySelectorAll('.star-pick').forEach((s,i) => {
-    s.classList.toggle('active', i < val);
-  });
+  document.querySelectorAll('.star-pick').forEach((s,i) => s.classList.toggle('active', i < val));
 }
-
 function buildThemePicker() {
   const container = document.getElementById('themePicker');
-  container.innerHTML = '';
   THEMES.forEach(t => {
     const sw = document.createElement('div');
     sw.className = `theme-swatch sw-${t}`;
-    sw.dataset.theme = t;
-    sw.innerHTML = '<i class="fa-solid fa-check"></i>';
     sw.onclick = () => setTheme(t);
     container.appendChild(sw);
   });
 }
-
 function setTheme(val) {
   document.getElementById('f_theme').value = val;
-  document.querySelectorAll('.theme-swatch').forEach(s => {
-    s.classList.toggle('selected', s.dataset.theme === val);
-  });
+  document.querySelectorAll('.theme-swatch').forEach(s => s.classList.toggle('selected', s.className.includes(val)));
 }
-
 function clearForm() {
-  ['f_title','f_epCurrent','f_epTotal','f_genre','f_notes'].forEach(id => {
-    document.getElementById(id).value = '';
-  });
-  document.getElementById('f_status').value = 'watching';
+  ['f_title','f_epCurrent','f_epTotal','f_genre','f_notes'].forEach(id => document.getElementById(id).value = '');
   setRating(0);
-  setTheme('default');
 }
-
 function fillForm(entry) {
-  document.getElementById('f_title').value = entry.title || '';
-  document.getElementById('f_status').value = entry.status || 'watching';
-  document.getElementById('f_genre').value = entry.genre || '';
-  document.getElementById('f_epCurrent').value = entry.epCurrent || '';
-  document.getElementById('f_epTotal').value = entry.epTotal || '';
-  document.getElementById('f_notes').value = entry.notes || '';
-  setRating(entry.rating || 0);
-  setTheme(entry.theme || 'default');
+  document.getElementById('f_title').value = entry.title;
+  document.getElementById('f_status').value = entry.status;
+  document.getElementById('f_epCurrent').value = entry.epCurrent;
+  document.getElementById('f_epTotal').value = entry.epTotal;
+  setRating(entry.rating);
+  setTheme(entry.theme);
 }
-
 function saveEntry() {
-  const title = document.getElementById('f_title').value.trim();
-  if (!title) {
-    document.getElementById('f_title').focus();
-    showToast('⚠️ Please enter a title');
-    return;
-  }
   const entry = {
-    title,
+    title: document.getElementById('f_title').value,
     status: document.getElementById('f_status').value,
-    genre: document.getElementById('f_genre').value.trim(),
     epCurrent: parseInt(document.getElementById('f_epCurrent').value) || 0,
     epTotal: parseInt(document.getElementById('f_epTotal').value) || 0,
     rating: parseInt(document.getElementById('f_rating').value) || 0,
     theme: document.getElementById('f_theme').value,
-    notes: document.getElementById('f_notes').value.trim(),
+    notes: document.getElementById('f_notes').value
   };
-
   if (editingId) {
     const idx = db.entries.findIndex(e=>e.id===editingId);
-    if (idx !== -1) {
-      db.entries[idx] = { ...db.entries[idx], ...entry };
-    }
-    showToast('✅ Entry updated!');
+    db.entries[idx] = { ...db.entries[idx], ...entry };
   } else {
     entry.id = generateId();
     entry.createdAt = Date.now();
     db.entries.unshift(entry);
-    showToast('🌸 Anime added!');
   }
   saveData();
   closeModal('editModalOverlay');
   renderCards();
 }
-
 function deleteEntry() {
-  if (!editingId) return;
   db.entries = db.entries.filter(e=>e.id!==editingId);
   saveData();
   closeModal('editModalOverlay');
   renderCards();
-  showToast('🗑️ Entry deleted');
 }
-
-function quickDelete(id) {
-  db.entries = db.entries.filter(e=>e.id!==id);
-  saveData();
-  renderCards();
-  showToast('🗑️ Removed');
-}
-
-/* ========================================================
-   IMPORT / EXPORT
-======================================================== */
-function openImportExport() {
-  // Pre-fill export box
-  document.getElementById('exportBox').textContent = JSON.stringify(db.entries, null, 2);
-  openModal('ieModalOverlay');
-}
-
 function switchIETab(panel, el) {
   document.querySelectorAll('.itab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.import-panel').forEach(p=>p.classList.remove('active'));
   el.classList.add('active');
   document.getElementById(`panel_${panel}`).classList.add('active');
-  if (panel === 'export') {
-    document.getElementById('exportBox').textContent = JSON.stringify(db.entries, null, 2);
-  }
 }
-
 function importPaste() {
   const raw = document.getElementById('ie_paste').value.trim();
-  if (!raw) { showToast('⚠️ Nothing to import'); return; }
-  const lines = raw.split('\n').map(l=>l.trim()).filter(Boolean);
-  let added = 0;
-  lines.forEach(line => {
-    const parts = line.split('|').map(p=>p.trim());
-    const title = parts[0];
-    if (!title) return;
-    const rating = parseInt(parts[1]) || 0;
-    let epCurrent = 0, epTotal = 0;
-    if (parts[2]) {
-      const ep = parts[2].split('/');
-      epCurrent = parseInt(ep[0]) || 0;
-      epTotal = parseInt(ep[1]) || 0;
-    }
-    db.entries.push({
-      id: generateId(),
-      createdAt: Date.now() + added,
-      title, rating, epCurrent, epTotal,
-      status: 'watching', theme: 'default', genre: '', notes: ''
-    });
-    added++;
+  raw.split('\n').forEach(line => {
+    db.entries.push({ id: generateId(), title: line, status: 'watching', createdAt: Date.now() });
   });
   saveData();
   renderCards();
   closeModal('ieModalOverlay');
-  showToast(`🌸 Imported ${added} anime!`);
 }
-
-function importJSON() {
-  const raw = document.getElementById('ie_json').value.trim();
-  if (!raw) { showToast('⚠️ Nothing to import'); return; }
-  try {
-    let parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) {
-      if (parsed.entries && Array.isArray(parsed.entries)) parsed = parsed.entries;
-      else throw new Error('Expected an array');
-    }
-    let added = 0;
-    parsed.forEach(item => {
-      if (!item.title) return;
-      db.entries.push({
-        id: generateId(),
-        createdAt: item.createdAt || Date.now() + added,
-        title: item.title || '',
-        status: item.status || 'watching',
-        genre: item.genre || '',
-        rating: Number(item.rating) || 0,
-        epCurrent: Number(item.epCurrent || item.eps_current || item.current) || 0,
-        epTotal: Number(item.epTotal || item.eps_total || item.total) || 0,
-        theme: item.theme || 'default',
-        notes: item.notes || ''
-      });
-      added++;
-    });
-    saveData();
-    renderCards();
-    closeModal('ieModalOverlay');
-    showToast(`📦 Imported ${added} entries!`);
-  } catch(e) {
-    showToast('❌ Invalid JSON: ' + e.message);
-  }
-}
-
-function copyExport() {
-  const text = JSON.stringify(db.entries, null, 2);
-  navigator.clipboard.writeText(text).then(() => {
-    showToast('📋 Copied to clipboard!');
-  }).catch(() => {
-    showToast('⚠️ Copy failed — select & copy manually');
-  });
-}
-
-/* ========================================================
-   HELPERS
-======================================================== */
-function escHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-let toastTimer;
-function showToast(msg, isError = false) {
-  const t = document.getElementById('toast');
-  t.innerHTML = msg;
-  t.style.borderColor = isError ? 'rgba(255,100,100,0.3)' : 'var(--border)';
-  t.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
-}
-
-/* ========================================================
-   EVENT LISTENERS
-======================================================== */
-document.getElementById('searchInput').addEventListener('input', e => {
-  currentSearch = e.target.value;
-  renderCards();
-});
-
+function copyExport() { navigator.clipboard.writeText(JSON.stringify(db.entries)); }
+document.getElementById('searchInput').addEventListener('input', e => { currentSearch = e.target.value; renderCards(); });
 document.getElementById('filterPills').addEventListener('click', e => {
-  const pill = e.target.closest('.pill');
-  if (!pill) return;
-  currentFilter = pill.dataset.filter;
-  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
-  pill.classList.add('active');
-  renderCards();
-});
-
-document.getElementById('sortSelect').addEventListener('change', renderCards);
-
-document.getElementById('fontSlider').addEventListener('input', e => {
-  document.documentElement.style.setProperty('--font-size', e.target.value + 'px');
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    closeModal('editModalOverlay');
-    closeModal('ieModalOverlay');
+  if (e.target.classList.contains('pill')) {
+    currentFilter = e.target.dataset.filter;
+    document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+    e.target.classList.add('active');
+    renderCards();
   }
 });
-
-/* ========================================================
-   INIT
-======================================================== */
+document.getElementById('fontSlider').addEventListener('input', e => { document.documentElement.style.setProperty('--font-size', e.target.value + 'px'); });
 loadData();
 buildStarPicker();
 buildThemePicker();
